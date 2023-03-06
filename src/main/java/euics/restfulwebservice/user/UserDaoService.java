@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Service
-@Transactional
 public class UserDaoService {
     private static List<User> users = new ArrayList<>();
 
