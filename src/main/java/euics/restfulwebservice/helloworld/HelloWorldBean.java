@@ -1,4 +1,4 @@
-package euics.restfulwebservice;
+package euics.restfulwebservice.helloworld;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
