@@ -5,6 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -39,6 +40,22 @@ public class UserDaoService {
         for(User user: users){
             if(user.getId() == id)
                 return user;
+        }
+
+        return null;
+    }
+
+    // deleteById() method를 통해 id로 user를 삭제합니다.
+    public User deleteById(int id){
+        Iterator<User> iterator = users.iterator();
+
+        while(iterator.hasNext()){
+            User user = iterator.next();
+
+            if(user.getId() == id){
+                iterator.remove();
+                return user;
+            }
         }
 
         return null;
