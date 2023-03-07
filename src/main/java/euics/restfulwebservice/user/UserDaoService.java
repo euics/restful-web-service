@@ -16,9 +16,9 @@ public class UserDaoService {
 
     // 고정적으로 List에 저장할 User 3개를 만들어준다.
     static {
-        users.add(new User(1, "Euics", new Date()));
-        users.add(new User(2, "Boonms", new Date()));
-        users.add(new User(3, "DukGun", new Date()));
+        users.add(new User(1, "Euics", new Date(), "password1", "ssn1"));
+        users.add(new User(2, "Boonms", new Date(), "password2", "ssn2"));
+        users.add(new User(3, "DukGun", new Date(), "password3", "ssn3"));
     }
 
     // findAll() method를 통해 List에 있는 모든 User들을 반환한다.
