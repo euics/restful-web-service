@@ -1,7 +1,6 @@
 package euics.restfulwebservice.user;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonFilter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -11,6 +10,7 @@ import java.util.Date;
 
 @Data
 @AllArgsConstructor
+@JsonFilter("UserInfo")
 public class User {
     private Integer id;
 
@@ -19,6 +19,7 @@ public class User {
 
     @Past
     private Date joinDate;
+
     private String password;
     private String ssn;
 }
