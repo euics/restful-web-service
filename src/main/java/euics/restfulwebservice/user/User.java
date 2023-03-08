@@ -11,7 +11,6 @@ import java.util.Date;
 
 @Data
 @AllArgsConstructor
-@JsonIgnoreProperties(value = {"password", "ssn"})
 public class User {
     private Integer id;
 
