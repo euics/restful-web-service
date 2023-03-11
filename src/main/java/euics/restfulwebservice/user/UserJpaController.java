@@ -47,4 +47,17 @@ public class UserJpaController {
     public void deleteUser(@PathVariable int id){
         userRepository.deleteById(id);
     }
+
+    @PostMapping("/users")
+    public ResponseEntity<User> createUser(@Valid
+                                               @RequestBody User user){
+        User savedUser = userRepository.save(user);
+
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(savedUser.getId())
+                .toUri();
+
+        return ResponseEntity.created(location).build();
+    }
 }
